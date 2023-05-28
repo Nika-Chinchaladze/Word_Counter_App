@@ -19,9 +19,10 @@ class LargeFileHandler:
         try:
             my_split = Split(inputfile=file_name, outputdir=self.split_directory)
             my_split.bysize(size=10240, newline=False, includeheader=False)
+            return True
         except FileNotFoundError:
-            print("File with that name doesn't exist!")
-        return None
+            print("File with that name on provided location - doesn't exist!")
+            return False
 
     def clean_split_files_directory(self):
         """method cleans split files directory from existing files."""
@@ -50,13 +51,14 @@ class LargeFileHandler:
         """
         quantity = 0
         file_list = self.get_file_name_list()
-        for file in file_list:
-            with open(f"{self.split_directory}/{file}", "r", encoding="utf8") as my_file:
-                for line in my_file:
-                    my_line = self.replace_punctuation(line=line.strip()).lower()
-                    my_words_list = my_line.split()
-                    if len(my_words_list) > 0:
-                        quantity += my_words_list.count(word.lower())
-                my_file.close()
+        if len(file_list) > 0:
+            for file in file_list:
+                with open(f"{self.split_directory}/{file}", "r", encoding="utf8") as my_file:
+                    for line in my_file:
+                        my_line = self.replace_punctuation(line=line.strip()).lower()
+                        my_words_list = my_line.split()
+                        if len(my_words_list) > 0:
+                            quantity += my_words_list.count(word.lower())
+                    my_file.close()
 
         return quantity

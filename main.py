@@ -6,15 +6,19 @@ def word_counter_project():
     """function counts desired word in provided text input or in .txt file."""
 
     # Greeting message in the beginning of the application.
-    print("Welcome to word counter console based application!")
+    print("Welcome to word counter console based application!\n")
 
     # Here we will provide user with two available choices, where
     # He is going to count word quantity: in entered string or in some
     # Specified .txt file. We will use while loop, which stops only when
-    # User enters correct answer / correct choice.
+    # User enters correct answer / correct choice or enters special keyword: 'stop'.
     correct_input = False
     while not correct_input:
-        user_choice = input("Where are you searching word quantity: in input or in file, choose one! ").lower()
+        user_choice = input("Where are you searching word quantity: in input or in file, choose one! -> ").lower()
+
+        # Here user can stop the program running process - manually!
+        if user_choice == "stop":
+            correct_input = True
 
         # Based on user input we will execute specific action.
         # If user chooses 'file' then program will use LargeFileHandler class
@@ -22,14 +26,34 @@ def word_counter_project():
             correct_input = True
             tool_1 = LargeFileHandler()
 
+            # Here user must provide correct file path, to get the quantity of desired word
+            # If user want's to stop the process, he must enter special keyword -'stop', instead of file path.
+            correct_file_path = False
+            while not correct_file_path:
+                provided_file_path = input("Please enter target file path: -> ").lower()
+
+                # Here user will stop the program running process - manually.
+                if provided_file_path == "stop":
+                    correct_file_path = True
+
+                # Here we check if file provided by user, exists on pointed location.
+                # If file exists, then program will split it - in chunks and then return the quantity
+                # Of desired word occurrences.
+                if tool_1.split_file(file_name=provided_file_path):
+                    correct_file_path = True
+                    provided_word_1 = input("Please enter desired word, which quantity will be counted: -> ").lower()
+                    result_1 = tool_1.count_word_quantity(word=provided_word_1)
+                    tool_1.clean_split_files_directory()
+                    print(f"Total Quantity: {result_1}")
+
         # If user chooses 'input' then program will use TextHandler class
         elif user_choice == "input":
             correct_input = True
-            provided_text = input("Please enter text, where are you going to count word quantity! ").lower()
-            provided_word = input("Please enter desired word, which quantity will be counted! ").lower()
+            provided_text = input("Please enter text, where are you going to count word quantity: -> ").lower()
+            provided_word_2 = input("Please enter desired word, which quantity will be counted: -> ").lower()
             tool_2 = TextHandler()
-            result_2 = tool_2.count_word_quantity(text=provided_text, word=provided_word)
-            print(result_2)
+            result_2 = tool_2.count_word_quantity(text=provided_text, word=provided_word_2)
+            print(f"Total Quantity: {result_2}")
 
         # If code reaches this place it means that user entered wrong answer,
         # Program will repeat the question again, with possible answers,
