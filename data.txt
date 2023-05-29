@@ -567,7 +567,7 @@ By using this principle developers are only concentrated on delivering current r
 3.	DRY – “don’t repeat yourself”
 Based on this principle developers have to reduce the repetitions of the same patterns in the code, they have to reduce creation of the same logic multiple times, instead they can create it ones and then use it in different places. This principle must be taken into consideration not only for codebases, but also in testing and documentation.
 Following the DRY principle is extremely useful when we want to make some modifications in the logic because we can make modification only one place and the whole codebase will be affected, but if we don’t follow this principle than we will have to make modifications in different part of the code because same logic would be represented in multiple places and they all have to be modified.
-Conclusion:
+Conclusion: sheLBY!?
 By using these principle we will get product with better user experience, the efficiency of developers will be increased because they will be able to create simple, maintainable and flexible codebases of products in a short period of time. Also they will be able to optimize the cost of creating not-necessary  features which decrease maintenance and time cost as well.
 
 
@@ -2279,7 +2279,7 @@ Low level module – tool that is needed to execute the action.
 Details – how tool works.
 it is the best practice when we are depending on abstract based classes / abstraction and not common classes. For example, if we are depended on common class and use its method in our class and then the name of used method will change - our code will crash because we use method that doesn't exist, so we must modify it. We need to find a way to avoid extra work, so it is the best practice if we use abstract based classes with abstract methods.
 High level modules(class) should not be depended on low level modules(tools), they both should be depended on abstraction. The interaction between high level and low level modules should be implemented by using abstract classes.
-Abstraction should not be depended on details, details should be depended on abstractions.
+Abstraction should not be depended on details, details should be depended on abstractions. SHelby SheLBY!!!!
 
 DEFINITION OF ABSTRACT CLASS:
 Abstract method – abstract class method that has declaration but not implementation, we have just ‘pass’ keyword inside it. We can’t create objects from abstract classes – it can’t be instantiated and also we can’t create an object from class that inherits from abstract based class and hasn’t declared implementation for abstract method inside it.
@@ -5011,4 +5011,4 @@ Triggered actions
 	an email was sent to reset password.
 
 Components: = Producer, consumer, broker
-Producer sends events to consumer. pachkovich PACHKOVICH,
+Producer sends events to consumer. shelby SHELBY,

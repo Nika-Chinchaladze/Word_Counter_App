@@ -16,13 +16,14 @@ def word_counter_project():
     while not correct_input:
         user_choice = input("Where are you searching word quantity: in input or in file, choose one! -> ").lower()
 
+        # Based on user input we will execute specific action.
         # Here user can stop the program running process - manually!
         if user_choice == "stop":
             correct_input = True
+            return correct_input
 
-        # Based on user input we will execute specific action.
         # If user chooses 'file' then program will use LargeFileHandler class
-        if user_choice == "file":
+        elif user_choice == "file":
             correct_input = True
             tool_1 = LargeFileHandler()
 
@@ -35,16 +36,21 @@ def word_counter_project():
                 # Here user will stop the program running process - manually.
                 if provided_file_path == "stop":
                     correct_file_path = True
+                    return correct_file_path
 
                 # Here we check if file provided by user, exists on pointed location.
                 # If file exists, then program will split it - in chunks and then return the quantity
                 # Of desired word occurrences.
-                if tool_1.split_file(file_name=provided_file_path):
+                if tool_1.check_file_existence(file_path=provided_file_path):
                     correct_file_path = True
                     provided_word_1 = input("Please enter desired word, which quantity will be counted: -> ").lower()
-                    result_1 = tool_1.count_word_quantity(word=provided_word_1)
+                    result_1 = tool_1.count_word_quantity(file_path=provided_file_path, word=provided_word_1)
                     tool_1.clean_split_files_directory()
-                    print(f"Total Quantity: {result_1}")
+                    if result_1:
+                        print(f"Total Quantity: {result_1}")
+                        return result_1
+                else:
+                    print("File with that name doesn't exist on pointed location!")
 
         # If user chooses 'input' then program will use TextHandler class
         elif user_choice == "input":
@@ -53,7 +59,9 @@ def word_counter_project():
             provided_word_2 = input("Please enter desired word, which quantity will be counted: -> ").lower()
             tool_2 = TextHandler()
             result_2 = tool_2.count_word_quantity(text=provided_text, word=provided_word_2)
-            print(f"Total Quantity: {result_2}")
+            if result_2:
+                print(f"Total Quantity: {result_2}")
+                return result_2
 
         # If code reaches this place it means that user entered wrong answer,
         # Program will repeat the question again, with possible answers,
