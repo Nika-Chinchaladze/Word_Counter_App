@@ -1,3 +1,7 @@
+"""Module tests TextHandler and LargeFileHandler class methods, also module is
+responsible for testing 'word_counter_project' function from main.py
+"""
+
 import unittest
 
 from unittest.mock import patch
@@ -39,12 +43,12 @@ class TestLargeFileHandler(unittest.TestCase):
         cls.my_tool = LargeFileHandler()
 
     def test_1_check_file_existence_error(self):
-        """Tests check_file_existence method of Large class on error situation"""
+        """Tests check_file_existence method of LargeFileHandler class on error situation"""
         my_result = self.my_tool.check_file_existence(file_path="tommy.txt")
         self.assertFalse(my_result)
 
     def test_2_check_file_existence_success(self):
-        """Tests check_file_existence method of Large class on success situation"""
+        """Tests check_file_existence method of LargeFileHandler class on success situation"""
         my_result = self.my_tool.check_file_existence(file_path="data.txt")
         self.assertTrue(my_result)
 
@@ -74,15 +78,20 @@ class TestLargeFileHandler(unittest.TestCase):
         self.assertEqual(my_result, 0)
 
     def test_7_replace_punctuations(self):
-        """Tests replace_punctuations method of TextHandler class."""
+        """Tests replace_punctuations method of LargeFileHandler class."""
         my_text = "I, l#ov*e, pr#og%ram?ming!!!"
         my_result = self.my_tool.replace_punctuation(line=my_text)
         self.assertEqual(my_result, "I love programming")
 
-    def test_8_count_word_quantity(self):
-        """Tests count_word_quantity method of TextHandler class."""
+    def test_8_count_word_quantity_success(self):
+        """Tests count_word_quantity method of LargeFileHandler class on success."""
         my_result = self.my_tool.count_word_quantity(file_path="data.txt", word="shelby")
         self.assertEqual(my_result, 5)
+
+    def test_9_count_word_quantity_error(self):
+        """Tests count_word_quantity method of LargeFileHandler class on error."""
+        my_result = self.my_tool.count_word_quantity(file_path="tommy.txt", word="shelby")
+        self.assertFalse(my_result)
 
 
 class TestWordCounterProject(unittest.TestCase):
@@ -95,7 +104,7 @@ class TestWordCounterProject(unittest.TestCase):
 
     @patch("builtins.input")
     def test_1_user_choice(self, mock_user_choice):
-        """Tests if execution of function stops / breaks, when user enters special 'stop' keyword."""
+        """Tests if execution of function stops / breaks, when user enters special keyword - stop"""
         mock_user_choice.return_value = "stop"
         self.assertTrue(word_counter_project())
 

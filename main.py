@@ -1,12 +1,24 @@
+"""Module is responsible for executing console based 'word_counter_project' application,
+module uses classes from file_handler and text_handler modules.
+"""
+
 from file_handler import LargeFileHandler
 from text_handler import TextHandler
+from app_rules import APPLICATION_RULES
 
 
 def word_counter_project():
     """function counts desired word in provided text input or in .txt file."""
 
     # Greeting message in the beginning of the application.
-    print("Welcome to word counter console based application!\n")
+    print(f"Welcome to word counter console based application!\n<-{'='*70}->")
+
+    # Here we suggest user to check existing rules - how to use our app.
+    rules = input("Do you want to see the rules, how to use application: yes/no -> ").strip().lower()
+    if rules == "yes":
+        print(APPLICATION_RULES)
+    else:
+        print(f"Seems you already know, how to use our application, VERY GOOD!\n{'-'*74}")
 
     # Here we will provide user with two available choices, where
     # He is going to count word quantity: in entered string or in some
@@ -14,11 +26,12 @@ def word_counter_project():
     # User enters correct answer / correct choice or enters special keyword: 'stop'.
     correct_input = False
     while not correct_input:
-        user_choice = input("Where are you searching word quantity: in input or in file, choose one! -> ").lower()
+        user_choice = input("Where are you searching word quantity, choose one: input or file! -> ").strip().lower()
 
         # Based on user input we will execute specific action.
         # Here user can stop the program running process - manually!
         if user_choice == "stop":
+            print("You have stopped the execution of program, Thank you for being with us!")
             correct_input = True
             return correct_input
 
@@ -35,6 +48,7 @@ def word_counter_project():
 
                 # Here user will stop the program running process - manually.
                 if provided_file_path == "stop":
+                    print("You have stopped the execution of program, Thank you for being with us!")
                     correct_file_path = True
                     return correct_file_path
 
@@ -45,17 +59,16 @@ def word_counter_project():
                     correct_file_path = True
                     provided_word_1 = input("Please enter desired word, which quantity will be counted: -> ").lower()
                     result_1 = tool_1.count_word_quantity(file_path=provided_file_path, word=provided_word_1)
-                    tool_1.clean_split_files_directory()
                     if result_1:
                         print(f"Total Quantity: {result_1}")
                         return result_1
                 else:
-                    print("File with that name doesn't exist on pointed location!")
+                    print(">>> File with that name doesn't exist on pointed location!")
 
         # If user chooses 'input' then program will use TextHandler class
         elif user_choice == "input":
             correct_input = True
-            provided_text = input("Please enter text, where are you going to count word quantity: -> ").lower()
+            provided_text = input("Please enter text, in which you going to count word quantity: -> ").lower()
             provided_word_2 = input("Please enter desired word, which quantity will be counted: -> ").lower()
             tool_2 = TextHandler()
             result_2 = tool_2.count_word_quantity(text=provided_text, word=provided_word_2)
@@ -68,7 +81,7 @@ def word_counter_project():
         # User will be able to continue the process, only when he enters one from the
         # Available choices.
         else:
-            print("Please enter only one of them: input or file!")
+            print(">>> Please enter only one of them: input or file!")
 
 
 if __name__ == "__main__":
