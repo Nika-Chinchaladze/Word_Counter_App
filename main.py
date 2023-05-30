@@ -59,7 +59,7 @@ def word_counter_project():
                     correct_file_path = True
                     provided_word_1 = input("Please enter desired word, which quantity will be counted: -> ").lower()
                     result_1 = tool_1.count_word_quantity(file_path=provided_file_path, word=provided_word_1)
-                    if result_1:
+                    if result_1 is not None:
                         print(f"Total Quantity: {result_1}")
                         return result_1
                 else:
@@ -72,7 +72,7 @@ def word_counter_project():
             provided_word_2 = input("Please enter desired word, which quantity will be counted: -> ").lower()
             tool_2 = TextHandler()
             result_2 = tool_2.count_word_quantity(text=provided_text, word=provided_word_2)
-            if result_2:
+            if result_2 is not None:
                 print(f"Total Quantity: {result_2}")
                 return result_2
 

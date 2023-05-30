@@ -2,7 +2,7 @@
 OOP – Object Oriented Programming
 OOP - is based on using objects and classes for programming. In classes, we bind data and functions together as one unit. We have variables inside class that are called - Attributes and functions that are called - methods. We can create object by using existing class and then access its attributes and methods, if we don't create object we can't access class elements from outside. When we have created object we should use dot-(.) after object name to access classes attributes and methods.
 
-CLASS: pachkovich
+CLASS: pachkovich lambORGHINI
 classes are logical entities that represents blueprints & plan - how objects can be created, and it contains attributes and methods. class is like a Factory to generate new objects. Example: maybe we want to track the description of cars - we don't need to create lists, dictionaries or any other data types to hold new car's characteristics - we can have Car class with several attributes and methods and based on this class we will be able to generate new cars as new objects.
 
 ATTRIBUTES:
@@ -101,7 +101,7 @@ it is the best practice when we are depending on abstract based classes / abstra
 High level modules(class) should not be depended on low level modules(tools), they both should be depended on abstraction. The interaction between high level and low level modules should be implemented by using abstract classes.
 Abstraction should not be depended on details, details should be depended on abstractions.
 
-DEFINITION OF ABSTRACT CLASS:
+DEFINITION OF ABSTRACT CLASS: lamborghini
 Abstract method – abstract class method that has declaration but not implementation, we have just ‘pass’ keyword inside it. We can’t create objects from abstract classes – it can’t be instantiated and also we can’t create an object from class that inherits from abstract based class and hasn’t declared implementation for abstract method inside it.
 When we want to provide same design pattern and common interface with different implementation, we normally use – abstract based classes. Because when implementation part is done by third-party, they will have some-kind of guideline while creating implementations for methods defined in abstract classes.
 
@@ -346,7 +346,7 @@ Benefits:
 Based on this principle developers should only work on functionalities that are actually needed and desired. Developers mustn’t waste their time on creating some extra functionalities that might be useful in the future because finally maybe it turns out that it was not need or useful at all.
 By using this principle developers are only concentrated on delivering current requirements and they don’t waste time on another features.
 
-3.	DRY – “don’t repeat yourself”
+3.	DRY – “don’t repeat yourself” lamborghini
 Based on this principle developers have to reduce the repetitions of the same patterns in the code, they have to reduce creation of the same logic multiple times, instead they can create it ones and then use it in different places. This principle must be taken into consideration not only for codebases, but also in testing and documentation.
 Following the DRY principle is extremely useful when we want to make some modifications in the logic because we can make modification only one place and the whole codebase will be affected, but if we don’t follow this principle than we will have to make modifications in different part of the code because same logic would be represented in multiple places and they all have to be modified.
 Conclusion:
@@ -903,7 +903,7 @@ constructor method that is used to define object's 'state' as soon as new object
 INHERITANCE:
 when child/derived class inherits attributes and methods from parent/base class. benefits:
 a) re-usability - we don't need to write same code again and again.
-b) we can add new features to class without modifying base class.
+b) we can add new features to class without modifying base class. LAMBORGHINI
 c) transitive nature - if B inherits from A and C inherits from B, it means that C inherits from A as well.
 
 *) Single Inheritance - common inheritance B inherits from A.
@@ -1895,7 +1895,7 @@ DISADVANTAGES:
 6.	The release process of monolith application is longer, because after every single change it needs to be re-built, re-tested and re-deployed again.
 
 ADVANTAGES:
-1.	monolithic way is well used for simple/lightweight applications, because at this simple level:
+1.	monolithic way is well used for simple/lightweight applications, because at this simple level: LAMBORGHINI
 a.	throughput is better - how many units of information can process in a given moment, we don't communicate to other servers with APIs - everything we need is contained by our application so for smaller applications execution and data processing process is faster.
 b.	deployment of simple/lightweight monolithic applications is simpler as well.
 
@@ -4773,7 +4773,7 @@ There are three main group of design patterns, and they differ from each other b
 2.	Structural Pattern – provide way, how to assemble / fit objects and classes into larger structures and at this time keep this structure flexible and efficient. Increase functionality of existing class.
 3.	Behavioral Pattern – takes care on effective communication and efficient distribution of responsibilities between objects.
 
-CRITICISM:
+CRITICISM: LAMBORGHINI
 We shouldn’t always use patterns because maybe in some situations simple code would do the same job and patterns are not dogma, they exist to help us in different situations but there is always a space for smart improvisation.
 
 
@@ -4792,7 +4792,7 @@ Triggered actions
 	account is locked and security personal is notified.
 	an email was sent to reset password.
 
-Components: = Producer, consumer, broker
+Components: = Producer, consumer, broker LAMBOrghini
 Producer sends events to consumer.
 & 1
 OOP – Object Oriented Programming
@@ -4812,7 +4812,7 @@ properties are unique attributes that contain getter, setter, deleter methods - 
 To define properties we can use @property decorator or property() function.
 
 OBJECTS:
-objects are entities/instances that have identity, state and behavior.
+objects are entities/instances that have identity, state and behavior. LAMBORGHINI!!!!
 for example => object created from Dog class.
 a) identity - is represented as unique name of an object. (name of the dog)
 b) state - is represented by attributes and properties of an object. (color, age of the dog)
@@ -4830,7 +4830,7 @@ a) re-usability - we don't need to write same code again and again.
 b) we can add new features to class without modifying base class.
 c) transitive nature - if B inherits from A and C inherits from B, it means that C inherits from A as well.
 
-*) Single Inheritance - common inheritance B inherits from A.
+*) Single Inheritance - common inheritance B inherits from A. LAMBORGHINI
 *) Multiple Inheritance - when A inherits from multiple classes like from B, C, D.
 *) Multi-level Inheritance - when C inherits from B which itself inherits from A class. (grandchild, child, parent)
 *) Hierarchical Inheritance - when multiple child classes inherit from one parent class.
@@ -4849,7 +4849,7 @@ when we have methods with the same names in parent and child classes. parameters
 
 ENCAPSULATION:
 wrap/bind data and methods (that work on this data) together within one unit. we can't access class variables and methods directly from outside that protects us from changing class data accidentally. we use private attributes during encapsulation, so we won't be able to change their values even we would create objects based on this class | private attributes won't be available from outside. for example: clients are not able to change their account's money balance while using bank application.
-
+LAMBORGHINI
 DATA ABSTRACTION:
 when we want to hide code details from user / internal functionality / how code is implemented, we use data abstraction and create 'abstract classes' and 'interfaces'. At this time user just provide necessary arguments/parameter while using our class, but can't see the logic inside it. User knows 'what function does', but doesn't know 'how'.
 *) Abstract Based Class - consists one or more abstract methods. abstract method doesn't have its implementation / logic, we just have 'pass' keyword inside abstract method in abstract class, but we use the same name for methods in child classes and there we have some functionality / logic for these methods. it is like 'Method Overriding'. For creating abstract class we are importing ABC and abstract method from abc module. we must define @abstractmethod decorator above method that we want to be abstract method, but actually it works without it as well. Abstract class can't be instantiated - we can't create object directly from Abstract Classes.
@@ -4879,7 +4879,7 @@ Good: I can Paint = Now I can Paint and Driving.
 Bad: I can Paint = Now I can Driving.
 It is better practice if we create new class when we want to add some more functionality.
 
-*) L - Liskov's Substitution Principle (LSP)
+*) L - Liskov's Substitution Principle (LSP) LAMBORGHINI
 1. Subclass can't have stricter conditions than they are defined in parent/base class - for example if base class checks a dictionary and raises error if it doesn't contain key - 'session_id', Subclass can't have extra condition that dictionary must contain - 'user_id' too.
 2. Subclass can't have weaker conditions / some extra exceptions, than they are defined in parent/base class - for example if base class 'Member' says that member must pay, and we have Subclass 'Student' where we raise exception and say that students are allowed not to pay - THIS IS WRONG - AGAINST THIS PRINCIPLE. for the best practice Student can't be Subclass of Member, because Members must pay no matter of reason.
 3. child class must be able to do everything that parent class can do and if child class is not able to do this it means that class is changed completely that violates this principle.
@@ -4897,7 +4897,7 @@ it is the best practice when we are depending on abstract based classes / abstra
 High level modules(class) should not be depended on low level modules(tools), they both should be depended on abstraction. The interaction between high level and low level modules should be implemented by using abstract classes.
 Abstraction should not be depended on details, details should be depended on abstractions.
 
-DEFINITION OF ABSTRACT CLASS:
+DEFINITION OF ABSTRACT CLASS: Lamborghini
 Abstract method – abstract class method that has declaration but not implementation, we have just ‘pass’ keyword inside it. We can’t create objects from abstract classes – it can’t be instantiated and also we can’t create an object from class that inherits from abstract based class and hasn’t declared implementation for abstract method inside it.
 When we want to provide same design pattern and common interface with different implementation, we normally use – abstract based classes. Because when implementation part is done by third-party, they will have some-kind of guideline while creating implementations for methods defined in abstract classes.
 
@@ -4933,7 +4933,7 @@ By using these principle we will get product with better user experience, the ef
 
 & 4
 Microservice Architecture vs Monolith
-Monolith
+Monolith Lamborghini
 In monolithic applications we have whole code in one place - multiple components are united as one single-application - they are connected directly, so they have large codebases and are hard to be managed.
 for example – if we have online shop application:
 we have user authentication, product catalog, shopping cart, payment system, checkout, application business logic and one database in one space - directly connected.
@@ -4962,7 +4962,7 @@ B.	Asynchronous communication – by using “Message Broker”. At this time mi
 C.	Service Mesh – like helper service that takes control over whole communication logic between microservices.
 Based on the fact that Microservices are completely isolated from each other and communicating with above mentioned tools, they can be developed with different programming languages and frameworks. So the micro applications of the whole project can be developed in different tech stack, where developers won’t affect and won’t be affected by another developers who are working on another microservices.
 
-DISADVANTAGES:
+DISADVANTAGES: Lamborghini
 A.	Communication problems between microservices when one microservice is ready in production – sends requests but another microservice is down / not ready and this cause errors.
 B.	When the whole application is not working properly it is hard to find where is the problem, because multiple microservices are deployed on multiple servers so the process is hard and time consuming.
 
@@ -5012,3 +5012,4 @@ Triggered actions
 
 Components: = Producer, consumer, broker
 Producer sends events to consumer. shelby SHELBY,
+Lamborghini
