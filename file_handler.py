@@ -23,6 +23,9 @@ class LargeFileHandler:
 
     def split_file(self, file_path):
         """method splits file into smaller chunks into specified directory"""
+        # Here we check is split_files directory exists and if not then we create it.
+        if not os.path.exists(self.split_directory):
+            os.makedirs(self.split_directory)
         # Here we try to divide targeted huge file into small - 10K chunks.
         try:
             my_split = Split(inputfile=file_path, outputdir=self.split_directory)
