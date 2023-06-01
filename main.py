@@ -2,7 +2,7 @@
 module uses classes from file_handler and text_handler modules.
 """
 
-from file_handler import LargeFileHandler
+from file_handler import FileHandler
 from text_handler import TextHandler
 from app_rules import APPLICATION_RULES
 
@@ -38,7 +38,7 @@ def word_counter_project():
         # If user chooses 'file' then program will use LargeFileHandler class
         elif user_choice == "file":
             correct_input = True
-            tool_1 = LargeFileHandler()
+            tool_1 = FileHandler()
 
             # Here user must provide correct file path, to get the quantity of desired word
             # If user want's to stop the process, he must enter special keyword -'stop', instead of file path.
