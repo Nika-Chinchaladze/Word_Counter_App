@@ -2,15 +2,14 @@
 specified word in provided text.
 """
 
-from punctuation_handler import PunctuationHandler
+from base_handler import BaseHandler
 
 
-class TextHandler(PunctuationHandler):
+class TextHandler(BaseHandler):
     """class is responsible for counting desired word occurrence quantity in provided text."""
 
     def __init__(self):
         super().__init__()
-        self.__hello = None
 
     def count_word_quantity(self, text, word) -> int:
         """method counts quantity of specified word in provided text."""

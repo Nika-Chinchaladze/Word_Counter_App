@@ -3,11 +3,8 @@
 import string
 
 
-class PunctuationHandler:
+class BaseHandler:
     """class contains replace_punctuations method."""
-
-    def __init__(self):
-        self.__hello = None
 
     def replace_punctuations(self, text) -> str:
         """methods replaces every punctuation with empty string"""

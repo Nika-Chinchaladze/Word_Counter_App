@@ -11,7 +11,7 @@ from unittest.mock import patch
 
 from text_handler import TextHandler
 from file_handler import FileHandler
-from punctuation_handler import PunctuationHandler
+from base_handler import BaseHandler
 from main import word_counter_project
 
 
@@ -79,11 +79,11 @@ class TestFileHandler(unittest.TestCase):
         self.assertFalse(my_result)
 
 
-class TestPunctuationHandler(unittest.TestCase):
+class TestBaseHandler(unittest.TestCase):
     """Tests PunctuationHandler class."""
 
     def setUp(self) -> None:
-        self.my_tool = PunctuationHandler()
+        self.my_tool = BaseHandler()
 
     def test_replace_punctuations(self):
         """Tests replace_punctuations method of PunctuationHandler class."""

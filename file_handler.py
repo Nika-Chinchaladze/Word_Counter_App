@@ -6,10 +6,10 @@ from __future__ import annotations
 
 import os
 
-from punctuation_handler import PunctuationHandler
+from base_handler import BaseHandler
 
 
-class FileHandler(PunctuationHandler):
+class FileHandler(BaseHandler):
     """class is responsible for handling large files"""
 
     def __init__(self):
